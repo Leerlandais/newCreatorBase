@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{% block lang %}fr{% endblock %}">
+<head>
+    {% block head %}
+        {% block meta %}
+        {% endblock %}
+        <title>{% block title %}{% endblock %}</title>
+        {% block stylesheet %}{% endblock %}
+    {% endblock %}
+</head>
+<body class="{% block bodyClass %}{% endblock %}">{% block body %}
+{% block systemMessage %}{% endblock %}
+{% block dumpArea %}{% endblock %}
+{% block navBar %}
+    {% block connectBtn %} {% endblock %}
+{% endblock %}
+
+{% block content %}
+    {% block hero %}
+        {% block heroText %}{% endblock %}
+        {% block heroImg  %}{% endblock %}
+    {% endblock %}
+    {% block sideBar %}{% endblock %}
+    {% block sectionOne %}{% endblock %} {# Change these names as needed #}
+    {% block sectionTwo %}{% endblock %}
+    {% block sectionThree %}{% endblock %}
+
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block javascript %}{% endblock %}
+
+</body> {% endblock %}
+</html>

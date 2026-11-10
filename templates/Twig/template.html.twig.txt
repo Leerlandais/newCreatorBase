@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block stylesheet %}
+    <link href="../dist/tailwind.min.css" rel="stylesheet">
+{% endblock %}
+{% block bodyClass %}h-screen bg-amber-50{% endblock %}
+
+{% block javascript %}
+<script src="{{ PUB_DIR }}scripts/tableSorter.js"></script>
+<script src="{{ PUB_DIR }}scripts/sessionEnder.js"></script>
+<script src="{{ PUB_DIR }}scripts/systemModalHandler.js"></script>
+{% endblock %}
