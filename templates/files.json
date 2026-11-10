@@ -41,6 +41,10 @@
       "destination": "public/scripts/sessionEnder.js"
     },
     {
+      "template": "JS/package.json.txt",
+      "destination": "package.json"
+    },
+    {
       "template": "PHP/extIndex.php.txt",
       "destination": "index.php"
     },
