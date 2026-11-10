@@ -1,0 +1,5 @@
+.idea
+/vendor
+/node_modules
+config.php
+configFiches.php
