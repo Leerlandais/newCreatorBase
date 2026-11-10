@@ -1,0 +1,20 @@
+{
+  "folders": [
+    "Controllers",
+    "Controllers/Abstract",
+    "data",
+    "model",
+    "model/Abstract",
+    "model/Manager",
+    "model/Mapping",
+    "model/Trait",
+    "Factory",
+    "public",
+    "public/images",
+    "public/scripts",
+    "public/styles",
+    "view",
+    "view/private",
+    "view/public"
+  ]
+}
