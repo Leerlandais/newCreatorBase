@@ -1,0 +1,15 @@
+<?php
+const DB_DRIVER = "mysql";
+const DB_HOST = "localhost";
+const DB_LOGIN = "root";
+const DB_PWD = "";
+const DB_NAME = "example";
+const DB_PORT = 3306;
+const DB_CHARSET = "utf8mb4";
+const PROJECT_DIRECTORY = __DIR__;
+const PUB_DIR = '/public/';
+const IMG_DIR = '/public/images';
+const ENV_MODE = "DEV";
+const DB_CONNECTION_STRING = DB_DRIVER . ":host=" . DB_HOST . ";dbname=" . DB_NAME . ";port=" . DB_PORT . ";charset=" . DB_CHARSET;
+const DB_UNKNOWN_CONNECTION_STRING = DB_DRIVER . ":host=" . DB_HOST . ";port=" . DB_PORT . ";charset=" . DB_CHARSET;
+const DB_OPTIONS = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC];

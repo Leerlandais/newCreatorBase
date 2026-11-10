@@ -1,14 +1,6 @@
 {
   "files": [
     {
-      "template": "PHP/config.php.txt",
-      "destination": "config.php",
-      "replacements": [
-        "DB_NAME",
-        "DB_PORT"
-      ]
-    },
-    {
       "template": "Tailwind/tailwind.config.js.txt",
       "destination": "tailwind.config.js"
     },
@@ -33,10 +25,6 @@
       "destination": "view/public/public.index.html.twig"
     },
     {
-      "template": "PHP/index.php.txt",
-      "destination": "public.index.php"
-    },
-    {
       "template": "Tailwind/tailwind.css.txt",
       "destination": "public/styles/tailwind.css"
     },
@@ -50,7 +38,15 @@
     },
     {
       "template": "JS/sessionEnder.js.txt",
-      "destination": "public.index.php"
+      "destination": "public/scripts/sessionEnder.js"
+    },
+    {
+      "template": "PHP/extIndex.php.txt",
+      "destination": "index.php"
+    },
+    {
+      "template": "PHP/index.php.txt",
+      "destination": "public/index.php"
     },
     {
       "template": "PHP/MyPDO.php.txt",
@@ -99,6 +95,13 @@
     {
       "template": "PHP/ConnectionController.php.txt",
       "destination": "Controllers/ConnectionController.php"
+    },    {
+      "template": "PHP/config.php.txt",
+      "destination": "config.php",
+      "replacements": [
+        "DB_NAME",
+        "DB_PORT"
+      ]
     }
   ]
 }
