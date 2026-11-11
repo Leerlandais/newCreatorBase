@@ -235,4 +235,4 @@ rl.question("Enter the project name : ", function (projName) {
     });
 });
 
-// pkg NewCreator112026.js --targets node18-win-x64 --output NEWER_Ultimate_MVC_Creator.exe
+// pkg NewCreator112026.js --targets node18-win-x64 --output MVC_Creator{date}.exe

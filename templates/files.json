@@ -74,7 +74,7 @@
     },
     {
       "template": "PHP/SecurityManager.php.txt",
-      "destination": "model/Manager/public/SecurityManager.php"
+      "destination": "model/Manager/SecurityManager.php"
     },
     {
       "template": "PHP/TraitLaundryRoom.php.txt",
