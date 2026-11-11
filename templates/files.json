@@ -104,7 +104,8 @@
       "destination": "config.php",
       "replacements": [
         "DB_NAME",
-        "DB_PORT"
+        "DB_PORT",
+        "PROJECT_NAME"
       ]
     }
   ]

@@ -10,7 +10,13 @@ if (isset($_SESSION["activity"]) && time() - $_SESSION["activity"] > 1800) {
 
 $_SESSION["activity"] = time();
 
-if(isset($_SESSION["id"]) && $_SESSION["id"] !== session_id()) {
+if (
+    isset($_SESSION["project_name"]) &&
+    $_SESSION["project_name"] !== PROJECT_NAME
+    ||
+    isset($_SESSION["id"]) &&
+    $_SESSION["id"] !== session_id()
+) {
     session_unset();
     session_destroy();
     header("location: ./");
@@ -30,6 +36,7 @@ if(isset($_SESSION['roles'])) $sessionRole = $_SESSION['roles'];
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 use Factory\ConnectionFactory;
+use Controllers\RouteController;
 require_once "../config.php";
 spl_autoload_register(function ($class) {
   $class = str_replace('\\', '/', $class);
@@ -61,5 +68,7 @@ try {
     $db = ConnectionFactory::createDb();
 }
 
-require_once PROJECT_DIRECTORY . '/Controllers/RouteController.php';
+
+$routeController = new RouteController($twig, $db);
+$routeController->handleRequest();
 $db = null;

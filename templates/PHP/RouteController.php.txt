@@ -1,19 +1,33 @@
 <?php
+
 namespace Controllers;
-use    model\Manager\RouteManager;
 
+use model\Manager\RouteManager;
 
-$router = new RouteManager($twig, $db);
+class RouteController
+{
+    private RouteManager $router;
 
-// Register routes
-// GENERAL ROUTES
-$router->registerRoute('home', ConnectionController::class, 'index');
-$router->registerRoute("logout", ConnectionController::class, "logout");
-$router->registerRoute('404', ErrorController::class, 'error404');
+    public function __construct($twig, $db)
+    {
+        $this->router = new RouteManager($twig, $db);
 
+        $this->registerRoutes();
+    }
 
+    private function registerRoutes(): void
+    {
+        // GENERAL ROUTES
+        $this->router->registerRoute('home', ConnectionController::class, 'index');
+        $this->router->registerRoute('logout', ConnectionController::class, 'logout');
+        $this->router->registerRoute('404', ConnectionController::class, 'error404');
 
+    }
 
-// Handle request
-$route = $_GET['route'] ?? 'home';
-$router->handleRequest($route);
+    public function handleRequest(): void
+    {
+        $route = $_GET['route'] ?? 'home';
+
+        $this->router->handleRequest($route);
+    }
+}
