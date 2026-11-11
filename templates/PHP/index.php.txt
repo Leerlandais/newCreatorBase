@@ -53,8 +53,10 @@ $twig->addGlobal("ENV", ENV_MODE);
 // var_dump($_SESSION);
 try {
     $db = ConnectionFactory::createDb();
-} catch (Exception $e) {
-    die($e->getMessage());
+} catch (PDOException $e) {
+    ConnectionFactory::insertNewDb();
+
+    $db = ConnectionFactory::createDb();
 }
 
 require_once PROJECT_DIRECTORY . '/Controllers/RouteController.php';
