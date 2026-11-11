@@ -9,6 +9,7 @@
     {% endblock %}
 </head>
 <body class="{% block bodyClass %}{% endblock %}">{% block body %}
+{% block header %}{% endblock %}
 {% block systemMessage %}{% endblock %}
 {% block dumpArea %}{% endblock %}
 {% block navBar %}

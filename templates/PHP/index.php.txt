@@ -17,6 +17,8 @@ if(isset($_SESSION["id"]) && $_SESSION["id"] !== session_id()) {
     exit();
 }
 
+$sessionExpiresAt = $_SESSION["activity"] + 1810;
+
 if (isset($_SESSION["systemMessage"])) {
     $systemMessage = $_SESSION["systemMessage"];
     unset($_SESSION["systemMessage"]);

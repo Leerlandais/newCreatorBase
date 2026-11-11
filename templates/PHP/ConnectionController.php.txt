@@ -30,6 +30,11 @@ class ConnectionController extends Abstract\AbstractController
 
     public function index() : void
     {
-        echo $this->twig->render('public/public.index.html.twig');
+        global $systemMessage, $sessionRole, $sessionExpiresAt;
+        echo $this->twig->render('public/public.index.html.twig', [
+            'sessionRole' => $sessionRole,
+            'sessionExpiresAt' => $sessionExpiresAt,
+            'systemMessage' => $systemMessage,
+        ]);
     }
 }

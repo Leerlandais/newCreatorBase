@@ -3,7 +3,23 @@
     <link href="../dist/tailwind.min.css" rel="stylesheet">
 {% endblock %}
 {% block bodyClass %}h-screen bg-amber-50{% endblock %}
-
+{% block header %}
+    <span class="hidden" id="sessionExpiresAt">{{ sessionExpiresAt * 1000 }}</span>
+{% endblock %}
+    {% block systemMessage %}
+        <div id="systemMessageModal"
+             class="fixed inset-0 bg-black bg-opacity-50 flex items-start pt-24 justify-center {{ systemMessage ? "" : "hidden" }} z-50">
+            <div class="bg-blue-100 rounded-2xl p-6 max-w-lg w-full shadow-2xl relative">
+                <button id="closeMessageModal"
+                        class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold">
+                    &times;
+                </button>
+                <p class="text-base text-gray-700 text-center">
+                    {{ systemMessage|nl2br }}
+                </p>
+            </div>
+        </div>
+    {% endblock %}
 {% block javascript %}
 <script src="{{ PUB_DIR }}scripts/tableSorter.js"></script>
 <script src="{{ PUB_DIR }}scripts/sessionEnder.js"></script>
